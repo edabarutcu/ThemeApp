@@ -1,0 +1,69 @@
+// MARK: - Navigation Titles
+"market_title" = "Theme Market";
+"purchased_title" = "Purchased";
+"profile_title" = "Profile";
+"widget_manager_title" = "Widget Management";
+
+// MARK: - Authentication
+"sign_in_with_apple" = "Sign in with Apple";
+"signing_in" = "Signing in...";
+"sign_out" = "Sign Out";
+"signing_out" = "Signing out...";
+"sign_in_prompt" = "Sign In";
+"sign_in_description" = "Sign in with Apple ID to purchase themes and customize your experience.";
+"apple_id_signed_in" = "Signed in with Apple ID";
+"premium_member" = "Premium Member";
+"unknown_error" = "Unknown error";
+"ok" = "OK";
+
+// MARK: - Loading
+"loading" = "Loading...";
+
+// MARK: - Theme Details
+"premium_theme" = "Premium Theme";
+"theme_description" = "Theme Description";
+"price" = "Price";
+"downloads" = "Downloads";
+"widgets" = "Widgets";
+"manage" = "Manage";
+"included" = "included";
+"app_icons" = "App Icons";
+"app" = "App";
+"buy" = "Buy";
+"preview" = "Preview";
+"purchased" = "Purchased";
+"apply" = "Apply";
+
+// MARK: - Widget Management
+"available_widgets" = "Available Widgets";
+"widget_preview" = "Widget Preview";
+"no_widget_selected" = "No widget selected yet";
+"widget_selected" = "widgets selected";
+"select_all" = "Select All";
+"clear_selection" = "Clear Selection";
+"cancel" = "Cancel";
+
+// MARK: - Purchased Themes
+"no_purchased_themes" = "You haven't purchased any themes yet";
+"purchased_themes_description" = "Select themes from the market to purchase and view them here.";
+"go_to_market" = "Go to Market";
+
+// MARK: - Widget Types
+"weather" = "Weather";
+"calendar" = "Calendar";
+"clock" = "Clock";
+"music" = "Music";
+"battery" = "Battery";
+"activity" = "Activity";
+"reminders" = "Reminders";
+"photos" = "Photos";
+
+// MARK: - Widget Sizes
+"small" = "Small";
+"medium" = "Medium";
+"large" = "Large";
+
+// MARK: - Tab Bar
+"market_tab" = "Market";
+"purchased_tab" = "Purchased";
+"profile_tab" = "Profile"; 

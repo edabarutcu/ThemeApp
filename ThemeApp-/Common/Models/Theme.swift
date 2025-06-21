@@ -39,6 +39,8 @@ struct Theme: Identifiable, Codable {
             Widget(id: "4", name: "Müzik", type: .music, size: .medium, isIncluded: false)
         ]
     )
+    
+    static let sampleThemes: [Theme] = [mockTheme]
 }
 
 struct Widget: Identifiable, Codable {
@@ -104,21 +106,21 @@ enum WidgetType: String, CaseIterable, Codable {
     var displayName: String {
         switch self {
         case .weather:
-            return "Hava Durumu"
+            return L10n.WidgetType.weather.localized
         case .calendar:
-            return "Takvim"
+            return L10n.WidgetType.calendar.localized
         case .clock:
-            return "Saat"
+            return L10n.WidgetType.clock.localized
         case .music:
-            return "Müzik"
+            return L10n.WidgetType.music.localized
         case .battery:
-            return "Pil Durumu"
+            return L10n.WidgetType.battery.localized
         case .activity:
-            return "Aktivite"
+            return L10n.WidgetType.activity.localized
         case .reminders:
-            return "Hatırlatıcılar"
+            return L10n.WidgetType.reminders.localized
         case .photos:
-            return "Fotoğraflar"
+            return L10n.WidgetType.photos.localized
         }
     }
 }
@@ -131,11 +133,11 @@ enum WidgetSize: String, CaseIterable, Codable {
     var displayName: String {
         switch self {
         case .small:
-            return "Küçük"
+            return L10n.WidgetSize.small.localized
         case .medium:
-            return "Orta"
+            return L10n.WidgetSize.medium.localized
         case .large:
-            return "Büyük"
+            return L10n.WidgetSize.large.localized
         }
     }
     

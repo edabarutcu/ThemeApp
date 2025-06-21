@@ -31,12 +31,12 @@ struct ProfileView: View {
             }
             .padding()
         }
-        .navigationTitle("Profil")
+        .navigationTitle(L10n.Navigation.profile.localized)
         .navigationBarTitleDisplayMode(.large)
         .alert("Hata", isPresented: $showingError) {
-            Button("Tamam") { }
+            Button(L10n.Auth.ok.localized) { }
         } message: {
-            Text(appleSignInManager.errorMessage ?? "Bilinmeyen hata")
+            Text(appleSignInManager.errorMessage ?? L10n.Auth.unknownError.localized)
         }
         .onChange(of: appleSignInManager.errorMessage) { errorMessage in
             showingError = errorMessage != nil
@@ -60,11 +60,11 @@ struct ProfileView: View {
                         .font(.system(size: 60))
                         .foregroundColor(.gray)
                     
-                    Text("Giriş Yapın")
+                    Text(L10n.Auth.signInPrompt.localized)
                         .font(.title2)
                         .fontWeight(.bold)
                     
-                    Text("Tema satın alma ve kişiselleştirme için Apple ID ile giriş yapın.")
+                    Text(L10n.Auth.signInDescription.localized)
                         .font(.body)
                         .foregroundColor(.secondary)
                         .multilineTextAlignment(.center)
@@ -112,7 +112,7 @@ struct ProfileView: View {
                 HStack {
                     Image(systemName: "crown.fill")
                         .foregroundColor(.yellow)
-                    Text("Premium Üye")
+                    Text(L10n.Auth.premiumMember.localized)
                         .font(.caption)
                         .fontWeight(.semibold)
                         .foregroundColor(.secondary)
@@ -129,74 +129,79 @@ struct ProfileView: View {
     }
     
     private var statsSection: some View {
-        HStack(spacing: 20) {
-            StatCard(
-                title: "Satın Alınan",
-                value: "\(presenter.userProfile.purchasedThemes)",
-                icon: "bag.fill",
-                color: .blue
-            )
+        VStack(alignment: .leading, spacing: 16) {
+            Text("İstatistikler")
+                .font(.headline)
+                .fontWeight(.semibold)
             
-            StatCard(
-                title: "İndirilen",
-                value: "\(presenter.userProfile.downloadedThemes)",
-                icon: "arrow.down.circle.fill",
-                color: .green
-            )
-            
-            StatCard(
-                title: "Uygulanan",
-                value: "\(presenter.userProfile.favoriteThemes)",
-                icon: "checkmark.circle.fill",
-                color: .red
-            )
+            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 16), count: 3), spacing: 16) {
+                StatCard(
+                    title: "Satın Alınan",
+                    value: "\(presenter.userProfile.purchasedThemes)",
+                    icon: "bag.fill",
+                    color: .green
+                )
+                
+                StatCard(
+                    title: "Uygulanan",
+                    value: "\(presenter.userProfile.downloadedThemes)",
+                    icon: "checkmark.circle.fill",
+                    color: .blue
+                )
+                
+                StatCard(
+                    title: "Favori",
+                    value: "\(presenter.userProfile.favoriteThemes)",
+                    icon: "heart.fill",
+                    color: .red
+                )
+            }
         }
     }
     
     private var menuSection: some View {
-        VStack(spacing: 8) {
-            MenuRow(
-                title: "Satın Alınan Temalar",
-                icon: "bag.fill",
-                color: .blue
-            ) {
-                presenter.showPurchasedThemes()
-            }
+        VStack(alignment: .leading, spacing: 16) {
+            Text("Ayarlar")
+                .font(.headline)
+                .fontWeight(.semibold)
             
-            MenuRow(
-                title: "Uygulanan Temalar",
-                icon: "checkmark.circle.fill",
-                color: .green
-            ) {
-                presenter.showAppliedThemes()
+            VStack(spacing: 8) {
+                MenuRow(
+                    title: "Bildirimler",
+                    icon: "bell.fill",
+                    color: .orange
+                ) {
+                    // Handle notifications
+                }
+                
+                MenuRow(
+                    title: "Gizlilik",
+                    icon: "lock.fill",
+                    color: .green
+                ) {
+                    // Handle privacy
+                }
+                
+                MenuRow(
+                    title: "Yardım",
+                    icon: "questionmark.circle.fill",
+                    color: .blue
+                ) {
+                    // Handle help
+                }
+                
+                MenuRow(
+                    title: "Hakkında",
+                    icon: "info.circle.fill",
+                    color: .purple
+                ) {
+                    // Handle about
+                }
             }
-            
-            MenuRow(
-                title: "Ayarlar",
-                icon: "gear",
-                color: .gray
-            ) {
-                presenter.showSettings()
-            }
-            
-            MenuRow(
-                title: "Yardım & Destek",
-                icon: "questionmark.circle.fill",
-                color: .orange
-            ) {
-                presenter.showHelp()
-            }
-            
-            MenuRow(
-                title: "Hakkında",
-                icon: "info.circle.fill",
-                color: .purple
-            ) {
-                presenter.showAbout()
-            }
+            .background(Color(.systemBackground))
+            .cornerRadius(12)
+            .shadow(color: .black.opacity(0.05), radius: 4, x: 0, y: 2)
         }
-        .background(Color(.systemGray6))
-        .cornerRadius(12)
     }
 }
 

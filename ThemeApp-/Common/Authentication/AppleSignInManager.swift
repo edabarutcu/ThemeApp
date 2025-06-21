@@ -118,7 +118,10 @@ extension AppleSignInManager: ASAuthorizationControllerDelegate {
             isAuthenticated = true
             isLoading = false
             
-            print("Apple Sign In successful: \(user.name) (\(user.email))")
+            DispatchQueue.main.async { [weak self] in
+                self?.isAuthenticated = true
+                self?.currentUser = user
+            }
         }
     }
     
@@ -126,25 +129,15 @@ extension AppleSignInManager: ASAuthorizationControllerDelegate {
         isLoading = false
         
         if let authError = error as? ASAuthorizationError {
-            switch authError.code {
-            case .canceled:
-                errorMessage = "Giriş iptal edildi"
-            case .failed:
-                errorMessage = "Giriş başarısız oldu"
-            case .invalidResponse:
-                errorMessage = "Geçersiz yanıt"
-            case .notHandled:
-                errorMessage = "İşlem tamamlanamadı"
-            case .unknown:
-                errorMessage = "Bilinmeyen hata"
-            @unknown default:
-                errorMessage = "Beklenmeyen hata"
-            }
+            errorMessage = "Giriş hatası: \(authError.localizedDescription)"
         } else {
             errorMessage = "Giriş sırasında hata oluştu"
         }
         
-        print("Apple Sign In error: \(error.localizedDescription)")
+        DispatchQueue.main.async { [weak self] in
+            self?.isAuthenticated = false
+            self?.currentUser = nil
+        }
     }
 }
 

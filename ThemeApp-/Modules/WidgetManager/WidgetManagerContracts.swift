@@ -35,6 +35,7 @@ protocol WidgetManagerInteractorProtocol {
     var availableWidgetsPublisher: AnyPublisher<[Widget], Never> { get }
     var loadingPublisher: AnyPublisher<Bool, Never> { get }
     var errorPublisher: AnyPublisher<String?, Never> { get }
+    var purchaseResultPublisher: AnyPublisher<PurchaseResult, Never> { get }
     
     func loadAvailableWidgets(for theme: Theme)
     func applyWidgets(_ widgets: [Widget], for theme: Theme)

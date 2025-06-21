@@ -1,0 +1,69 @@
+// MARK: - Navigation Titles
+"market_title" = "Tema Marketi";
+"purchased_title" = "Satın Aldıklarım";
+"profile_title" = "Profil";
+"widget_manager_title" = "Widget Yönetimi";
+
+// MARK: - Authentication
+"sign_in_with_apple" = "Apple ile Giriş Yap";
+"signing_in" = "Giriş yapılıyor...";
+"sign_out" = "Çıkış Yap";
+"signing_out" = "Çıkış yapılıyor...";
+"sign_in_prompt" = "Giriş Yapın";
+"sign_in_description" = "Tema satın alma ve kişiselleştirme için Apple ID ile giriş yapın.";
+"apple_id_signed_in" = "Apple ID ile giriş yapıldı";
+"premium_member" = "Premium Üye";
+"unknown_error" = "Bilinmeyen hata";
+"ok" = "Tamam";
+
+// MARK: - Loading
+"loading" = "Yükleniyor...";
+
+// MARK: - Theme Details
+"premium_theme" = "Premium Tema";
+"theme_description" = "Tema Açıklaması";
+"price" = "Fiyat";
+"downloads" = "İndirme";
+"widgets" = "Widget'lar";
+"manage" = "Yönet";
+"included" = "dahil";
+"app_icons" = "Uygulama İkonları";
+"app" = "Uygulama";
+"buy" = "Satın Al";
+"preview" = "Önizle";
+"purchased" = "Satın Alındı";
+"apply" = "Uygula";
+
+// MARK: - Widget Management
+"available_widgets" = "Mevcut Widget'lar";
+"widget_preview" = "Widget Önizleme";
+"no_widget_selected" = "Henüz widget seçilmedi";
+"widget_selected" = "widget seçildi";
+"select_all" = "Tümünü Seç";
+"clear_selection" = "Seçimi Temizle";
+"cancel" = "İptal";
+
+// MARK: - Purchased Themes
+"no_purchased_themes" = "Henüz tema satın almadınız";
+"purchased_themes_description" = "Market'ten tema seçerek satın alabilir ve burada görüntüleyebilirsiniz.";
+"go_to_market" = "Market'e Git";
+
+// MARK: - Widget Types
+"weather" = "Hava Durumu";
+"calendar" = "Takvim";
+"clock" = "Saat";
+"music" = "Müzik";
+"battery" = "Pil Durumu";
+"activity" = "Aktivite";
+"reminders" = "Hatırlatıcılar";
+"photos" = "Fotoğraflar";
+
+// MARK: - Widget Sizes
+"small" = "Küçük";
+"medium" = "Orta";
+"large" = "Büyük";
+
+// MARK: - Tab Bar
+"market_tab" = "Market";
+"purchased_tab" = "Satın Aldıklarım";
+"profile_tab" = "Profil"; 
