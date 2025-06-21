@@ -25,7 +25,7 @@ struct AppleSignInButton: View {
                         .foregroundColor(.white)
                 }
                 
-                Text(isLoading ? "Giriş yapılıyor..." : "Apple ile Giriş Yap")
+                Text(isLoading ? L10n.Auth.signingIn.localized : L10n.Auth.signInWithApple.localized)
                     .font(.headline)
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
@@ -58,7 +58,7 @@ struct AppleSignOutButton: View {
                         .foregroundColor(.red)
                 }
                 
-                Text(isLoading ? "Çıkış yapılıyor..." : "Çıkış Yap")
+                Text(isLoading ? L10n.Auth.signingOut.localized : L10n.Auth.signOut.localized)
                     .font(.headline)
                     .fontWeight(.semibold)
                     .foregroundColor(.red)
@@ -106,7 +106,7 @@ struct UserInfoCard: View {
             }
             
             HStack {
-                Label("Apple ID ile giriş yapıldı", systemImage: "applelogo")
+                Label(L10n.Auth.appleIdSignedIn.localized, systemImage: "applelogo")
                     .font(.caption)
                     .foregroundColor(.secondary)
                 

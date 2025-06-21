@@ -29,17 +29,17 @@ struct WidgetManagerView: View {
                 }
                 .padding()
             }
-            .navigationTitle("Widget Yönetimi")
+            .navigationTitle(L10n.Navigation.widgetManager.localized)
             .navigationBarTitleDisplayMode(.large)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button("İptal") {
+                    Button(L10n.Widget.cancel.localized) {
                         dismiss()
                     }
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Uygula") {
+                    Button(L10n.Theme.apply.localized) {
                         presenter.applyWidgets()
                         dismiss()
                     }
@@ -66,7 +66,7 @@ struct WidgetManagerView: View {
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
                             
-                            Text("\(presenter.selectedWidgets.count) widget seçildi")
+                            Text("\(presenter.selectedWidgets.count) \(L10n.Widget.widgetSelected.localized)")
                                 .font(.caption)
                                 .foregroundColor(.white.opacity(0.8))
                         }
@@ -80,7 +80,7 @@ struct WidgetManagerView: View {
     
     private var availableWidgetsSection: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Mevcut Widget'lar")
+            Text(L10n.Widget.availableWidgets.localized)
                 .font(.headline)
                 .fontWeight(.semibold)
             
@@ -100,7 +100,7 @@ struct WidgetManagerView: View {
     
     private var widgetPreviewSection: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Widget Önizleme")
+            Text(L10n.Widget.widgetPreview.localized)
                 .font(.headline)
                 .fontWeight(.semibold)
             
@@ -110,24 +110,20 @@ struct WidgetManagerView: View {
                         .font(.system(size: 40))
                         .foregroundColor(.gray)
                     
-                    Text("Henüz widget seçilmedi")
+                    Text(L10n.Widget.noWidgetSelected.localized)
                         .font(.body)
                         .foregroundColor(.secondary)
+                        .multilineTextAlignment(.center)
                 }
                 .frame(maxWidth: .infinity)
-                .frame(height: 200)
+                .frame(height: 120)
                 .background(Color(.systemGray6))
                 .cornerRadius(12)
             } else {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 16) {
-                        ForEach(Array(presenter.selectedWidgets), id: \.self) { widgetId in
-                            if let widget = presenter.availableWidgets.first(where: { $0.id == widgetId }) {
-                                WidgetPreview(widget: widget, themeColor: presenter.theme.primaryColor)
-                            }
-                        }
+                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 12), count: 2), spacing: 12) {
+                    ForEach(presenter.availableWidgets.filter { presenter.selectedWidgets.contains($0.id) }) { widget in
+                        WidgetPreviewCard(widget: widget, themeColor: presenter.theme.primaryColor)
                     }
-                    .padding(.horizontal)
                 }
             }
         }
@@ -138,7 +134,7 @@ struct WidgetManagerView: View {
             Button(action: { presenter.selectAllWidgets() }) {
                 HStack {
                     Image(systemName: "checkmark.circle.fill")
-                    Text("Tümünü Seç")
+                    Text(L10n.Widget.selectAll.localized)
                 }
                 .font(.headline)
                 .foregroundColor(.white)
@@ -151,7 +147,7 @@ struct WidgetManagerView: View {
             Button(action: { presenter.clearSelection() }) {
                 HStack {
                     Image(systemName: "xmark.circle.fill")
-                    Text("Seçimi Temizle")
+                    Text(L10n.Widget.clearSelection.localized)
                 }
                 .font(.headline)
                 .foregroundColor(presenter.theme.primaryColor)
@@ -219,42 +215,11 @@ struct WidgetSelectionCard: View {
             .background(Color(.systemBackground))
             .cornerRadius(12)
             .shadow(color: .black.opacity(0.05), radius: 4, x: 0, y: 2)
-            .overlay(
-                RoundedRectangle(cornerRadius: 12)
-                    .stroke(isSelected ? themeColor : Color.clear, lineWidth: 2)
-            )
         }
         .buttonStyle(PlainButtonStyle())
     }
 }
 
-struct WidgetPreview: View {
-    let widget: Widget
-    let themeColor: Color
-    
-    var body: some View {
-        VStack(spacing: 8) {
-            RoundedRectangle(cornerRadius: 12)
-                .fill(themeColor.opacity(0.1))
-                .frame(width: widget.size.dimensions.width / 3, height: widget.size.dimensions.height / 3)
-                .overlay(
-                    VStack(spacing: 4) {
-                        Image(systemName: widget.iconName)
-                            .font(.caption)
-                            .foregroundColor(widget.color)
-                        Text(widget.name)
-                            .font(.caption2)
-                            .foregroundColor(.secondary)
-                    }
-                )
-            
-            Text(widget.size.displayName)
-                .font(.caption2)
-                .foregroundColor(.secondary)
-        }
-    }
-}
-
 #Preview {
-    WidgetManagerView(presenter: WidgetManagerPresenter(theme: Theme.mockTheme))
+    WidgetManagerView(presenter: WidgetManagerPresenter(theme: Theme.sampleThemes[0]))
 } 

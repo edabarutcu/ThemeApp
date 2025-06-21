@@ -12,25 +12,25 @@ struct CustomTabBar: View {
     
     var body: some View {
         HStack(spacing: 0) {
-            ForEach(0..<3) { index in
+            ForEach(0..<TabItem.allCases.count, id: \.self) { index in
+                let tab = TabItem.allCases[index]
                 TabBarButton(
                     isSelected: selectedTab == index,
-                    tab: TabItem.allCases[index]
+                    tab: tab
                 ) {
-                    withAnimation(.easeInOut(duration: 0.3)) {
-                        selectedTab = index
-                    }
+                    selectedTab = index
                 }
             }
         }
-        .padding(.horizontal, 20)
-        .padding(.vertical, 10)
+        .padding(.horizontal, 16)
+        .padding(.vertical, 8)
         .background(
-            RoundedRectangle(cornerRadius: 25)
-                .fill(.ultraThinMaterial)
-                .shadow(color: .black.opacity(0.1), radius: 10, x: 0, y: 5)
+            RoundedRectangle(cornerRadius: 20)
+                .fill(Color(.systemBackground))
+                .shadow(color: .black.opacity(0.1), radius: 8, x: 0, y: 4)
         )
         .padding(.horizontal, 20)
+        .padding(.bottom, 8)
     }
 }
 
@@ -75,11 +75,11 @@ enum TabItem: CaseIterable {
     var title: String {
         switch self {
         case .market:
-            return "Market"
+            return L10n.Tab.market.localized
         case .purchased:
-            return "Satın Aldıklarım"
+            return L10n.Tab.purchased.localized
         case .profile:
-            return "Profil"
+            return L10n.Tab.profile.localized
         }
     }
     

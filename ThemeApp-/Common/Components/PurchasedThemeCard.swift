@@ -1,43 +1,14 @@
 //
-//  MarketView.swift
+//  PurchasedThemeCard.swift
 //  ThemeApp
 //
-//  Created by Eda Barutçu on 20.06.2025.
+//  Created by Eda Barutçu on 21.06.2025.
 //
+
 
 import SwiftUI
 
-struct MarketView: View {
-    @ObservedObject var presenter: MarketPresenter
-    
-    var body: some View {
-        NavigationView {
-            Group {
-                if presenter.isLoading {
-                    ProgressView(L10n.Loading.loading.localized)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                } else {
-                    ScrollView {
-                        LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 16), count: 2), spacing: 16) {
-                            ForEach(presenter.themes, id: \.id) { theme in
-                                ThemeCard(theme: theme) {
-                                    presenter.selectTheme(theme)
-                                }
-                            }
-                        }
-                        .padding()
-                    }
-                }
-            }
-            .navigationBarTitleDisplayMode(.large)
-            .refreshable {
-                presenter.loadThemes()
-            }
-        }
-    }
-}
-
-struct ThemeCard: View {
+struct PurchasedThemeCard: View {
     let theme: Theme
     let onTap: () -> Void
     
@@ -53,7 +24,6 @@ struct ThemeCard: View {
                                 .font(.system(size: 40))
                                 .foregroundColor(.white)
                             
-                            // Widget count badge
                             HStack(spacing: 4) {
                                 Image(systemName: "rectangle.stack.fill")
                                     .font(.caption2)
@@ -82,10 +52,10 @@ struct ThemeCard: View {
                     
                     HStack {
                         VStack(alignment: .leading, spacing: 2) {
-                            Text("₺\(theme.price, specifier: "%.2f")")
-                                .font(.subheadline)
+                            Text(L10n.Theme.purchased.localized)
+                                .font(.caption)
+                                .foregroundColor(.green)
                                 .fontWeight(.semibold)
-                                .foregroundColor(.blue)
                             
                             Text("\(theme.widgets.filter { $0.isIncluded }.count) widget")
                                 .font(.caption2)
@@ -94,9 +64,16 @@ struct ThemeCard: View {
                         
                         Spacer()
                         
-                        if theme.isPremium {
-                            Image(systemName: "crown.fill")
-                                .foregroundColor(.yellow)
+                        Button(action: {
+                        }) {
+                            Text(L10n.Theme.apply.localized)
+                                .font(.caption)
+                                .fontWeight(.semibold)
+                                .foregroundColor(.white)
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 6)
+                                .background(theme.primaryColor)
+                                .cornerRadius(8)
                         }
                     }
                 }
@@ -112,5 +89,6 @@ struct ThemeCard: View {
 }
 
 #Preview {
-    MarketView(presenter: MarketPresenter())
+    PurchasedThemeCard(theme: Theme.mockTheme) {
+    }
 } 

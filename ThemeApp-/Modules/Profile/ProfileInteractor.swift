@@ -29,19 +29,24 @@ class ProfileInteractor: ProfileInteractorProtocol {
         loadingSubject.send(true)
         errorSubject.send(nil)
         
-        // Simulate network delay
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
             self?.loadingSubject.send(false)
             self?.userProfileSubject.send(UserProfile.mockProfile)
         }
     }
     
-    func logout() {
-        // Handle logout logic
-        print("User logged out")
-    }
+    func logout() {}
     
     func updateUserProfile(_ profile: UserProfile) {
         userProfileSubject.send(profile)
+    }
+    
+    func signOut() {
+        loadingSubject.send(true)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            self?.loadingSubject.send(false)
+            self?.userProfileSubject.send(UserProfile.mockProfile)
+        }
     }
 } 

@@ -70,7 +70,7 @@ struct ThemeDetailView: View {
                 HStack {
                     Image(systemName: "crown.fill")
                         .foregroundColor(.yellow)
-                    Text("Premium Tema")
+                    Text(L10n.Theme.premiumTheme.localized)
                         .font(.caption)
                         .fontWeight(.semibold)
                         .foregroundColor(.secondary)
@@ -81,7 +81,7 @@ struct ThemeDetailView: View {
     
     private var infoSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Tema Açıklaması")
+            Text(L10n.Theme.themeDescription.localized)
                 .font(.headline)
                 .fontWeight(.semibold)
             
@@ -91,7 +91,7 @@ struct ThemeDetailView: View {
             
             HStack {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("Fiyat")
+                    Text(L10n.Theme.price.localized)
                         .font(.caption)
                         .foregroundColor(.secondary)
                     Text("₺\(presenter.theme.price, specifier: "%.2f")")
@@ -103,7 +103,7 @@ struct ThemeDetailView: View {
                 Spacer()
                 
                 VStack(alignment: .trailing, spacing: 4) {
-                    Text("İndirme")
+                    Text(L10n.Theme.downloads.localized)
                         .font(.caption)
                         .foregroundColor(.secondary)
                     Text("1.2K")
@@ -121,20 +121,20 @@ struct ThemeDetailView: View {
     private var widgetsSection: some View {
         VStack(alignment: .leading, spacing: 16) {
             HStack {
-                Text("Widget'lar")
+                Text(L10n.Theme.widgets.localized)
                     .font(.headline)
                     .fontWeight(.semibold)
                 
                 Spacer()
                 
-                Button("Yönet") {
+                Button(L10n.Theme.manage.localized) {
                     showingWidgetManager = true
                 }
                 .font(.subheadline)
                 .foregroundColor(presenter.theme.primaryColor)
             }
             
-            Text("\(presenter.theme.widgets.filter { $0.isIncluded }.count) dahil")
+            Text("\(presenter.theme.widgets.filter { $0.isIncluded }.count) \(L10n.Theme.included.localized)")
                 .font(.caption)
                 .foregroundColor(.secondary)
             
@@ -147,31 +147,22 @@ struct ThemeDetailView: View {
     }
     
     private var previewSection: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text("Uygulama İkonları")
+        VStack(alignment: .leading, spacing: 16) {
+            Text(L10n.Theme.appIcons.localized)
                 .font(.headline)
                 .fontWeight(.semibold)
             
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 16) {
-                    ForEach(presenter.theme.appIcons, id: \.self) { iconName in
-                        VStack(spacing: 8) {
-                            RoundedRectangle(cornerRadius: 12)
-                                .fill(presenter.theme.primaryColor)
-                                .frame(width: 60, height: 60)
-                                .overlay(
-                                    Image(systemName: "app.fill")
-                                        .font(.title2)
-                                        .foregroundColor(.white)
-                                )
-                            
-                            Text("Uygulama")
+            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 12), count: 4), spacing: 12) {
+                ForEach(0..<8, id: \.self) { index in
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(presenter.theme.primaryColor.opacity(0.3))
+                        .frame(height: 60)
+                        .overlay(
+                            Text(L10n.Theme.app.localized)
                                 .font(.caption)
-                                .foregroundColor(.secondary)
-                        }
-                    }
+                                .foregroundColor(presenter.theme.primaryColor)
+                        )
                 }
-                .padding(.horizontal)
             }
         }
     }
@@ -181,7 +172,7 @@ struct ThemeDetailView: View {
             Button(action: { presenter.purchaseTheme() }) {
                 HStack {
                     Image(systemName: "cart.fill")
-                    Text("Satın Al")
+                    Text(L10n.Theme.buy.localized)
                 }
                 .font(.headline)
                 .foregroundColor(.white)
@@ -194,7 +185,7 @@ struct ThemeDetailView: View {
             Button(action: { presenter.previewTheme() }) {
                 HStack {
                     Image(systemName: "eye.fill")
-                    Text("Önizle")
+                    Text(L10n.Theme.preview.localized)
                 }
                 .font(.headline)
                 .foregroundColor(presenter.theme.primaryColor)
@@ -207,63 +198,8 @@ struct ThemeDetailView: View {
     }
 }
 
-struct WidgetPreviewCard: View {
-    let widget: Widget
-    let themeColor: Color
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            HStack {
-                Image(systemName: widget.iconName)
-                    .font(.title3)
-                    .foregroundColor(widget.color)
-                
-                Spacer()
-                
-                if widget.isIncluded {
-                    Image(systemName: "checkmark.circle.fill")
-                        .foregroundColor(.green)
-                        .font(.caption)
-                } else {
-                    Image(systemName: "plus.circle")
-                        .foregroundColor(.blue)
-                        .font(.caption)
-                }
-            }
-            
-            Text(widget.name)
-                .font(.subheadline)
-                .fontWeight(.medium)
-                .foregroundColor(.primary)
-            
-            Text(widget.size.displayName)
-                .font(.caption)
-                .foregroundColor(.secondary)
-            
-            // Widget preview
-            RoundedRectangle(cornerRadius: 8)
-                .fill(themeColor.opacity(0.1))
-                .frame(height: 40)
-                .overlay(
-                    HStack {
-                        Image(systemName: widget.iconName)
-                            .font(.caption)
-                            .foregroundColor(widget.color)
-                        Text(widget.type.displayName)
-                            .font(.caption2)
-                            .foregroundColor(.secondary)
-                    }
-                )
-        }
-        .padding()
-        .background(Color(.systemBackground))
-        .cornerRadius(12)
-        .shadow(color: .black.opacity(0.05), radius: 4, x: 0, y: 2)
-    }
-}
-
 #Preview {
     NavigationView {
-        ThemeDetailView(presenter: ThemeDetailPresenter(theme: Theme.mockTheme))
+        ThemeDetailView(presenter: ThemeDetailPresenter(theme: Theme.sampleThemes[0]))
     }
 } 

@@ -12,6 +12,7 @@ class WidgetManagerInteractor: WidgetManagerInteractorProtocol {
     private let availableWidgetsSubject = CurrentValueSubject<[Widget], Never>([])
     private let loadingSubject = CurrentValueSubject<Bool, Never>(false)
     private let errorSubject = CurrentValueSubject<String?, Never>(nil)
+    private let purchaseResultSubject = CurrentValueSubject<PurchaseResult, Never>(.failure(""))
     
     var availableWidgetsPublisher: AnyPublisher<[Widget], Never> {
         availableWidgetsSubject.eraseToAnyPublisher()
@@ -23,6 +24,10 @@ class WidgetManagerInteractor: WidgetManagerInteractorProtocol {
     
     var errorPublisher: AnyPublisher<String?, Never> {
         errorSubject.eraseToAnyPublisher()
+    }
+    
+    var purchaseResultPublisher: AnyPublisher<PurchaseResult, Never> {
+        purchaseResultSubject.eraseToAnyPublisher()
     }
     
     func loadAvailableWidgets(for theme: Theme) {
@@ -38,27 +43,19 @@ class WidgetManagerInteractor: WidgetManagerInteractorProtocol {
     
     func applyWidgets(_ widgets: [Widget], for theme: Theme) {
         loadingSubject.send(true)
-        errorSubject.send(nil)
         
         // Simulate applying widgets
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
             self?.loadingSubject.send(false)
-            
-            // Apply widgets to device
-            print("Applying \(widgets.count) widgets for theme: \(theme.name)")
-            
-            // Here you would integrate with iOS WidgetKit to actually apply the widgets
-            for widget in widgets {
-                self?.applyWidgetToDevice(widget, theme: theme)
-            }
+            self?.purchaseResultSubject.send(.success)
         }
     }
     
-    private func applyWidgetToDevice(_ widget: Widget, theme: Theme) {
-        // This would integrate with iOS WidgetKit APIs
-        // For now, just print the action
-        print("Applying widget: \(widget.name) (\(widget.type.displayName)) - Size: \(widget.size.displayName)")
-        print("Theme colors: Primary: \(theme.primaryColor), Secondary: \(theme.secondaryColor)")
+    private func applyWidget(_ widget: Widget, for theme: Theme) {
+        // Simulate individual widget application
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            // Widget applied successfully
+        }
     }
     
     func getWidgetConfiguration(for widget: Widget) -> WidgetConfiguration {

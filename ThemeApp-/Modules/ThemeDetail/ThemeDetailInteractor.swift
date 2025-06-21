@@ -29,11 +29,9 @@ class ThemeDetailInteractor: ThemeDetailInteractorProtocol {
         loadingSubject.send(true)
         errorSubject.send(nil)
         
-        // Simulate purchase process
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [weak self] in
             self?.loadingSubject.send(false)
             
-            // Simulate random success/failure
             let isSuccess = Bool.random()
             if isSuccess {
                 self?.purchaseResultSubject.send(.success)
@@ -44,13 +42,20 @@ class ThemeDetailInteractor: ThemeDetailInteractorProtocol {
     }
     
     func applyTheme(_ theme: Theme) {
-        // Apply theme to device (wallpaper and app icons)
-        // This would integrate with iOS APIs to change wallpaper and app icons
-        print("Applying theme: \(theme.name)")
+        loadingSubject.send(true)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
+            self?.loadingSubject.send(false)
+            self?.purchaseResultSubject.send(.success)
+        }
     }
     
     func downloadTheme(_ theme: Theme) {
-        // Download theme assets
-        print("Downloading theme: \(theme.name)")
+        loadingSubject.send(true)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
+            self?.loadingSubject.send(false)
+            self?.purchaseResultSubject.send(.success)
+        }
     }
 } 
