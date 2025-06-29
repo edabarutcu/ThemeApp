@@ -34,6 +34,7 @@ struct MarketView: View {
                 presenter.loadThemes()
             }
         }
+        .navigationViewStyle(.stack)
     }
 }
 
