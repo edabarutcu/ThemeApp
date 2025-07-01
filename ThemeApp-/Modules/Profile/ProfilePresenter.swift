@@ -19,7 +19,17 @@ class ProfilePresenter: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     
     init(interactor: ProfileInteractorProtocol = ProfileInteractor(), router: ProfileRouterProtocol = ProfileRouter()) {
-        self.userProfile = UserProfile.mockProfile
+        self.userProfile = UserProfile(
+            id: "",
+            name: "",
+            email: "",
+            isPremium: false,
+            purchasedThemes: 0,
+            downloadedThemes: 0,
+            favoriteThemes: 0,
+            joinDate: Date(),
+            lastActive: Date()
+        )
         self.interactor = interactor
         self.router = router
         setupBindings()

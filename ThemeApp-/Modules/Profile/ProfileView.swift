@@ -20,11 +20,8 @@ struct ProfileView: View {
                 
                 // Profile header (only show if authenticated)
                 if appleSignInManager.isAuthenticated {
-                    profileHeader
-                    
                     // Stats section
                     statsSection
-                    
                     // Menu items
                     menuSection
                 }
@@ -49,7 +46,6 @@ struct ProfileView: View {
                 if let user = appleSignInManager.currentUser {
                     UserInfoCard(user: user)
                 }
-                
                 AppleSignOutButton(
                     action: { appleSignInManager.signOut() },
                     isLoading: appleSignInManager.isLoading
@@ -83,7 +79,6 @@ struct ProfileView: View {
     
     private var profileHeader: some View {
         VStack(spacing: 16) {
-            // Profile image
             Circle()
                 .fill(LinearGradient(
                     colors: [.blue, .purple],
@@ -107,7 +102,6 @@ struct ProfileView: View {
                     .foregroundColor(.secondary)
             }
             
-            // Premium badge
             if presenter.userProfile.isPremium {
                 HStack {
                     Image(systemName: "crown.fill")
@@ -233,35 +227,6 @@ struct StatCard: View {
     }
 }
 
-struct MenuRow: View {
-    let title: String
-    let icon: String
-    let color: Color
-    let action: () -> Void
-    
-    var body: some View {
-        Button(action: action) {
-            HStack {
-                Image(systemName: icon)
-                    .font(.title3)
-                    .foregroundColor(color)
-                    .frame(width: 24)
-                
-                Text(title)
-                    .font(.body)
-                    .foregroundColor(.primary)
-                
-                Spacer()
-                
-                Image(systemName: "chevron.right")
-                    .font(.caption)
-                    .foregroundColor(.secondary)
-            }
-            .padding()
-        }
-        .buttonStyle(PlainButtonStyle())
-    }
-}
 
 #Preview {
     ProfileView(presenter: ProfilePresenter())

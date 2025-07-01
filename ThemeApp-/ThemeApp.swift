@@ -1,12 +1,13 @@
 import SwiftUI
 
 @main
-struct ThemeAppApp: App {
+struct ThemeApp: App {
     @State private var selectedTab = 0
     @State private var selectedTheme: Theme?
     @State private var showingWidgetManager = false
     @State private var widgetManagerTheme: Theme?
     @StateObject private var appleSignInManager = AppleSignInManager()
+    @StateObject private var profilePresenter = ProfilePresenter()
     
     var body: some Scene {
         WindowGroup {
@@ -19,7 +20,7 @@ struct ThemeAppApp: App {
                         PurchasedView()
                             .tag(1)
                         
-                        ProfileView(presenter: ProfilePresenter())
+                        ProfileView(presenter: profilePresenter)
                             .environmentObject(appleSignInManager)
                             .tag(2)
                     }

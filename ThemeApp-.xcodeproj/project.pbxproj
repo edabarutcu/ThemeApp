@@ -3,11 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0FE33322F2E0073A17A2D401 /* Pods_ThemeApp_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D95DA5C56C8DA4DB2AE6F8C /* Pods_ThemeApp_.framework */; };
+		760BF96DB0F8B9D012AA8267 /* Pods_ThemeApp_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C4B2FD5759A246DE9A3C242 /* Pods_ThemeApp_.framework */; };
 		DB9F7D022E11782200AB6085 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB9F7CFE2E11782200AB6085 /* Localizable.strings */; };
 		DB9F7D032E11782200AB6085 /* LocalizationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7CDD2E11782200AB6085 /* LocalizationKeys.swift */; };
 		DB9F7D042E11782200AB6085 /* PurchasedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7CED2E11782200AB6085 /* PurchasedView.swift */; };
@@ -16,37 +16,35 @@
 		DB9F7D072E11782200AB6085 /* MarketPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7CE22E11782200AB6085 /* MarketPresenter.swift */; };
 		DB9F7D082E11782200AB6085 /* AppleSignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7CD32E11782200AB6085 /* AppleSignInManager.swift */; };
 		DB9F7D092E11782200AB6085 /* WidgetManagerContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7CF52E11782200AB6085 /* WidgetManagerContracts.swift */; };
-		DB9F7D0A2E11782200AB6085 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7CE72E11782200AB6085 /* ProfileInteractor.swift */; };
 		DB9F7D0B2E11782200AB6085 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7CD52E11782200AB6085 /* CustomTabBar.swift */; };
 		DB9F7D0C2E11782200AB6085 /* WidgetPreviewCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7CD72E11782200AB6085 /* WidgetPreviewCard.swift */; };
-		DB9F7D0D2E11782200AB6085 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7CEA2E11782200AB6085 /* ProfileView.swift */; };
 		DB9F7D0E2E11782200AB6085 /* ThemeDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7CF12E11782200AB6085 /* ThemeDetailPresenter.swift */; };
 		DB9F7D0F2E11782200AB6085 /* WidgetManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7CF92E11782200AB6085 /* WidgetManagerView.swift */; };
 		DB9F7D102E11782200AB6085 /* MarketContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7CE02E11782200AB6085 /* MarketContracts.swift */; };
-		DB9F7D112E11782200AB6085 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7CE82E11782200AB6085 /* ProfilePresenter.swift */; };
 		DB9F7D122E11782200AB6085 /* WidgetManagerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7CF72E11782200AB6085 /* WidgetManagerPresenter.swift */; };
 		DB9F7D132E11782200AB6085 /* MarketInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7CE12E11782200AB6085 /* MarketInteractor.swift */; };
 		DB9F7D142E11782200AB6085 /* WidgetManagerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7CF82E11782200AB6085 /* WidgetManagerRouter.swift */; };
 		DB9F7D152E11782200AB6085 /* ThemeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7CF32E11782200AB6085 /* ThemeDetailView.swift */; };
-		DB9F7D162E11782200AB6085 /* ThemeAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7D012E11782200AB6085 /* ThemeAppApp.swift */; };
+		DB9F7D162E11782200AB6085 /* ThemeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7D012E11782200AB6085 /* ThemeApp.swift */; };
 		DB9F7D172E11782200AB6085 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7CDA2E11782200AB6085 /* UserProfile.swift */; };
 		DB9F7D182E11782200AB6085 /* MarketRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7CE32E11782200AB6085 /* MarketRouter.swift */; };
 		DB9F7D192E11782200AB6085 /* ThemeDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7CF02E11782200AB6085 /* ThemeDetailInteractor.swift */; };
 		DB9F7D1A2E11782200AB6085 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7CD92E11782200AB6085 /* Theme.swift */; };
-		DB9F7D1B2E11782200AB6085 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7CE92E11782200AB6085 /* ProfileRouter.swift */; };
 		DB9F7D1C2E11782200AB6085 /* ThemeDetailContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7CEF2E11782200AB6085 /* ThemeDetailContracts.swift */; };
-		DB9F7D1D2E11782200AB6085 /* ProfileContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7CE62E11782200AB6085 /* ProfileContracts.swift */; };
 		DB9F7D1E2E11782200AB6085 /* AppleSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7CD22E11782200AB6085 /* AppleSignInButton.swift */; };
 		DB9F7D1F2E11782200AB6085 /* ThemeDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7CF22E11782200AB6085 /* ThemeDetailRouter.swift */; };
 		DB9F7D202E11782200AB6085 /* PurchasedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7CEC2E11782200AB6085 /* PurchasedPresenter.swift */; };
 		DB9F7D212E11782200AB6085 /* PurchasedThemeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7CD62E11782200AB6085 /* PurchasedThemeCard.swift */; };
 		DB9F7D222E11782200AB6085 /* MarketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7CE42E11782200AB6085 /* MarketView.swift */; };
 		DB9F7D242E11824800AB6085 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB9F7D232E11824800AB6085 /* GoogleService-Info.plist */; };
+		DBABB1372E144815005547CF /* UserInfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBABB1362E144815005547CF /* UserInfoCard.swift */; };
+		DBABB1392E14487D005547CF /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBABB1382E14487D005547CF /* TabBarButton.swift */; };
+		DBABB13B2E1448CD005547CF /* ThemeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBABB13A2E1448CD005547CF /* ThemeCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3B3D13267F3C5FF2BBC1C9CF /* Pods-ThemeApp-.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThemeApp-.debug.xcconfig"; path = "Target Support Files/Pods-ThemeApp-/Pods-ThemeApp-.debug.xcconfig"; sourceTree = "<group>"; };
-		9D95DA5C56C8DA4DB2AE6F8C /* Pods_ThemeApp_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThemeApp_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		381599AFA0BD970998AE37A1 /* Pods-ThemeApp-.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThemeApp-.debug.xcconfig"; path = "Target Support Files/Pods-ThemeApp-/Pods-ThemeApp-.debug.xcconfig"; sourceTree = "<group>"; };
+		7C4B2FD5759A246DE9A3C242 /* Pods_ThemeApp_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThemeApp_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9AF2262E07139400E645BF /* ThemeApp-.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ThemeApp-.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9F7CD22E11782200AB6085 /* AppleSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInButton.swift; sourceTree = "<group>"; };
 		DB9F7CD32E11782200AB6085 /* AppleSignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInManager.swift; sourceTree = "<group>"; };
@@ -62,11 +60,6 @@
 		DB9F7CE22E11782200AB6085 /* MarketPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketPresenter.swift; sourceTree = "<group>"; };
 		DB9F7CE32E11782200AB6085 /* MarketRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketRouter.swift; sourceTree = "<group>"; };
 		DB9F7CE42E11782200AB6085 /* MarketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketView.swift; sourceTree = "<group>"; };
-		DB9F7CE62E11782200AB6085 /* ProfileContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContracts.swift; sourceTree = "<group>"; };
-		DB9F7CE72E11782200AB6085 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
-		DB9F7CE82E11782200AB6085 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
-		DB9F7CE92E11782200AB6085 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
-		DB9F7CEA2E11782200AB6085 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		DB9F7CEC2E11782200AB6085 /* PurchasedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasedPresenter.swift; sourceTree = "<group>"; };
 		DB9F7CED2E11782200AB6085 /* PurchasedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasedView.swift; sourceTree = "<group>"; };
 		DB9F7CEF2E11782200AB6085 /* ThemeDetailContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeDetailContracts.swift; sourceTree = "<group>"; };
@@ -82,38 +75,38 @@
 		DB9F7CFC2E11782200AB6085 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DB9F7CFD2E11782200AB6085 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DB9F7D002E11782200AB6085 /* ThemeApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ThemeApp.entitlements; sourceTree = "<group>"; };
-		DB9F7D012E11782200AB6085 /* ThemeAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeAppApp.swift; sourceTree = "<group>"; };
+		DB9F7D012E11782200AB6085 /* ThemeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeApp.swift; sourceTree = "<group>"; };
 		DB9F7D232E11824800AB6085 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		F43D218221960C7280BB0C12 /* Pods-ThemeApp-.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThemeApp-.release.xcconfig"; path = "Target Support Files/Pods-ThemeApp-/Pods-ThemeApp-.release.xcconfig"; sourceTree = "<group>"; };
+		DB9F7D252E118F2700AB6085 /* ThemeApp-.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ThemeApp-.entitlements"; sourceTree = "<group>"; };
+		DBABB1362E144815005547CF /* UserInfoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCard.swift; sourceTree = "<group>"; };
+		DBABB1382E14487D005547CF /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
+		DBABB13A2E1448CD005547CF /* ThemeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCard.swift; sourceTree = "<group>"; };
+		FFCD1FA5FBA8789B9F501F07 /* Pods-ThemeApp-.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThemeApp-.release.xcconfig"; path = "Target Support Files/Pods-ThemeApp-/Pods-ThemeApp-.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		DBABB14D2E14491A005547CF /* Profile */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Profile; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		DB9AF2232E07139400E645BF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FE33322F2E0073A17A2D401 /* Pods_ThemeApp_.framework in Frameworks */,
+				760BF96DB0F8B9D012AA8267 /* Pods_ThemeApp_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		92838615C1026D6E59CA86E1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9D95DA5C56C8DA4DB2AE6F8C /* Pods_ThemeApp_.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		DB9AF21D2E07139400E645BF = {
 			isa = PBXGroup;
 			children = (
 				DB9AF2282E07139400E645BF /* ThemeApp- */,
 				DB9AF2272E07139400E645BF /* Products */,
 				DBF5F17602FCAD57ADBB7D9C /* Pods */,
-				92838615C1026D6E59CA86E1 /* Frameworks */,
+				EE2200BD42D7D74E04BBF77B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,11 +121,12 @@
 		DB9AF2282E07139400E645BF /* ThemeApp- */ = {
 			isa = PBXGroup;
 			children = (
+				DB9F7D252E118F2700AB6085 /* ThemeApp-.entitlements */,
 				DB9F7CDF2E11782200AB6085 /* Common */,
 				DB9F7CFB2E11782200AB6085 /* Modules */,
 				DB9F7CFF2E11782200AB6085 /* Resources */,
 				DB9F7D002E11782200AB6085 /* ThemeApp.entitlements */,
-				DB9F7D012E11782200AB6085 /* ThemeAppApp.swift */,
+				DB9F7D012E11782200AB6085 /* ThemeApp.swift */,
 				DB9F7D232E11824800AB6085 /* GoogleService-Info.plist */,
 			);
 			path = "ThemeApp-";
@@ -143,6 +137,7 @@
 			children = (
 				DB9F7CD22E11782200AB6085 /* AppleSignInButton.swift */,
 				DB9F7CD32E11782200AB6085 /* AppleSignInManager.swift */,
+				DBABB1362E144815005547CF /* UserInfoCard.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -153,6 +148,7 @@
 				DB9F7CD52E11782200AB6085 /* CustomTabBar.swift */,
 				DB9F7CD62E11782200AB6085 /* PurchasedThemeCard.swift */,
 				DB9F7CD72E11782200AB6085 /* WidgetPreviewCard.swift */,
+				DBABB1382E14487D005547CF /* TabBarButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -194,20 +190,9 @@
 				DB9F7CE22E11782200AB6085 /* MarketPresenter.swift */,
 				DB9F7CE32E11782200AB6085 /* MarketRouter.swift */,
 				DB9F7CE42E11782200AB6085 /* MarketView.swift */,
+				DBABB13A2E1448CD005547CF /* ThemeCard.swift */,
 			);
 			path = Market;
-			sourceTree = "<group>";
-		};
-		DB9F7CEB2E11782200AB6085 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				DB9F7CE62E11782200AB6085 /* ProfileContracts.swift */,
-				DB9F7CE72E11782200AB6085 /* ProfileInteractor.swift */,
-				DB9F7CE82E11782200AB6085 /* ProfilePresenter.swift */,
-				DB9F7CE92E11782200AB6085 /* ProfileRouter.swift */,
-				DB9F7CEA2E11782200AB6085 /* ProfileView.swift */,
-			);
-			path = Profile;
 			sourceTree = "<group>";
 		};
 		DB9F7CEE2E11782200AB6085 /* Purchased */ = {
@@ -246,8 +231,8 @@
 		DB9F7CFB2E11782200AB6085 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				DBABB14D2E14491A005547CF /* Profile */,
 				DB9F7CE52E11782200AB6085 /* Market */,
-				DB9F7CEB2E11782200AB6085 /* Profile */,
 				DB9F7CEE2E11782200AB6085 /* Purchased */,
 				DB9F7CF42E11782200AB6085 /* ThemeDetail */,
 				DB9F7CFA2E11782200AB6085 /* WidgetManager */,
@@ -266,10 +251,18 @@
 		DBF5F17602FCAD57ADBB7D9C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B3D13267F3C5FF2BBC1C9CF /* Pods-ThemeApp-.debug.xcconfig */,
-				F43D218221960C7280BB0C12 /* Pods-ThemeApp-.release.xcconfig */,
+				381599AFA0BD970998AE37A1 /* Pods-ThemeApp-.debug.xcconfig */,
+				FFCD1FA5FBA8789B9F501F07 /* Pods-ThemeApp-.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		EE2200BD42D7D74E04BBF77B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C4B2FD5759A246DE9A3C242 /* Pods_ThemeApp_.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,15 +272,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB9AF2312E07139500E645BF /* Build configuration list for PBXNativeTarget "ThemeApp-" */;
 			buildPhases = (
-				EF2F981D509F87D7500E3987 /* [CP] Check Pods Manifest.lock */,
+				9D7D242CDBF9E7CD5E86176F /* [CP] Check Pods Manifest.lock */,
 				DB9AF2222E07139400E645BF /* Sources */,
 				DB9AF2232E07139400E645BF /* Frameworks */,
 				DB9AF2242E07139400E645BF /* Resources */,
-				A8A33D8A2B3B3AC3CB16C391 /* [CP] Embed Pods Frameworks */,
+				1624359E61E91780CB187114 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				DBABB14D2E14491A005547CF /* Profile */,
 			);
 			name = "ThemeApp-";
 			productName = "ThemeApp-";
@@ -341,7 +337,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A8A33D8A2B3B3AC3CB16C391 /* [CP] Embed Pods Frameworks */ = {
+		1624359E61E91780CB187114 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -362,7 +358,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ThemeApp-/Pods-ThemeApp--frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EF2F981D509F87D7500E3987 /* [CP] Check Pods Manifest.lock */ = {
+		9D7D242CDBF9E7CD5E86176F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -398,26 +394,24 @@
 				DB9F7D072E11782200AB6085 /* MarketPresenter.swift in Sources */,
 				DB9F7D082E11782200AB6085 /* AppleSignInManager.swift in Sources */,
 				DB9F7D092E11782200AB6085 /* WidgetManagerContracts.swift in Sources */,
-				DB9F7D0A2E11782200AB6085 /* ProfileInteractor.swift in Sources */,
 				DB9F7D0B2E11782200AB6085 /* CustomTabBar.swift in Sources */,
 				DB9F7D0C2E11782200AB6085 /* WidgetPreviewCard.swift in Sources */,
-				DB9F7D0D2E11782200AB6085 /* ProfileView.swift in Sources */,
 				DB9F7D0E2E11782200AB6085 /* ThemeDetailPresenter.swift in Sources */,
 				DB9F7D0F2E11782200AB6085 /* WidgetManagerView.swift in Sources */,
 				DB9F7D102E11782200AB6085 /* MarketContracts.swift in Sources */,
-				DB9F7D112E11782200AB6085 /* ProfilePresenter.swift in Sources */,
 				DB9F7D122E11782200AB6085 /* WidgetManagerPresenter.swift in Sources */,
 				DB9F7D132E11782200AB6085 /* MarketInteractor.swift in Sources */,
+				DBABB1392E14487D005547CF /* TabBarButton.swift in Sources */,
 				DB9F7D142E11782200AB6085 /* WidgetManagerRouter.swift in Sources */,
+				DBABB1372E144815005547CF /* UserInfoCard.swift in Sources */,
 				DB9F7D152E11782200AB6085 /* ThemeDetailView.swift in Sources */,
-				DB9F7D162E11782200AB6085 /* ThemeAppApp.swift in Sources */,
+				DB9F7D162E11782200AB6085 /* ThemeApp.swift in Sources */,
 				DB9F7D172E11782200AB6085 /* UserProfile.swift in Sources */,
+				DBABB13B2E1448CD005547CF /* ThemeCard.swift in Sources */,
 				DB9F7D182E11782200AB6085 /* MarketRouter.swift in Sources */,
 				DB9F7D192E11782200AB6085 /* ThemeDetailInteractor.swift in Sources */,
 				DB9F7D1A2E11782200AB6085 /* Theme.swift in Sources */,
-				DB9F7D1B2E11782200AB6085 /* ProfileRouter.swift in Sources */,
 				DB9F7D1C2E11782200AB6085 /* ThemeDetailContracts.swift in Sources */,
-				DB9F7D1D2E11782200AB6085 /* ProfileContracts.swift in Sources */,
 				DB9F7D1E2E11782200AB6085 /* AppleSignInButton.swift in Sources */,
 				DB9F7D1F2E11782200AB6085 /* ThemeDetailRouter.swift in Sources */,
 				DB9F7D202E11782200AB6085 /* PurchasedPresenter.swift in Sources */,
@@ -562,10 +556,11 @@
 		};
 		DB9AF2322E07139500E645BF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B3D13267F3C5FF2BBC1C9CF /* Pods-ThemeApp-.debug.xcconfig */;
+			baseConfigurationReference = 381599AFA0BD970998AE37A1 /* Pods-ThemeApp-.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ThemeApp-/ThemeApp-.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P93W3FV728;
@@ -579,7 +574,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -587,18 +582,23 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.theme.ThemeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		DB9AF2332E07139500E645BF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F43D218221960C7280BB0C12 /* Pods-ThemeApp-.release.xcconfig */;
+			baseConfigurationReference = FFCD1FA5FBA8789B9F501F07 /* Pods-ThemeApp-.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ThemeApp-/ThemeApp-.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P93W3FV728;
@@ -612,7 +612,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -620,9 +620,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.theme.ThemeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
