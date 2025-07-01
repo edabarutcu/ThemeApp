@@ -9,7 +9,6 @@ import SwiftUI
 
 class MarketRouter: MarketRouterProtocol {
     func navigateToThemeDetail(_ theme: Theme) {
-        // Navigation will be handled by the main app coordinator
         NotificationCenter.default.post(
             name: .navigateToThemeDetail,
             object: theme

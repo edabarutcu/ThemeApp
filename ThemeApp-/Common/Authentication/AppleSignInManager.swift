@@ -89,6 +89,7 @@ class AppleSignInManager: NSObject, ObservableObject {
     }
     
     private func saveUserData(_ user: AppleUser) {
+        print("Apple user kaydediliyor: id=\(user.id), email=\(user.email), name=\(user.name)")
         UserDefaults.standard.set(user.id, forKey: "appleUserID")
         UserDefaults.standard.set(user.email, forKey: "appleUserEmail")
         UserDefaults.standard.set(user.name, forKey: "appleUserName")
@@ -153,7 +154,7 @@ extension AppleSignInManager: ASAuthorizationControllerPresentationContextProvid
 }
 
 // MARK: - Apple User Model
-struct AppleUser: Codable {
+struct AppleUser: Codable, Equatable {
     let id: String
     let email: String
     let name: String

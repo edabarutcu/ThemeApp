@@ -7,7 +7,6 @@ target 'ThemeApp-' do
 
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
-  pod 'PromisesObjC' 
 
   # Pods for ThemeApp-
 

@@ -9,7 +9,19 @@ import Foundation
 import Combine
 
 class ProfileInteractor: ProfileInteractorProtocol {
-    private let userProfileSubject = CurrentValueSubject<UserProfile, Never>(UserProfile.mockProfile)
+    private let userProfileSubject = CurrentValueSubject<UserProfile, Never>(
+        UserProfile(
+            id: "",
+            name: "",
+            email: "",
+            isPremium: false,
+            purchasedThemes: 0,
+            downloadedThemes: 0,
+            favoriteThemes: 0,
+            joinDate: Date(),
+            lastActive: Date()
+        )
+    )
     private let loadingSubject = CurrentValueSubject<Bool, Never>(false)
     private let errorSubject = CurrentValueSubject<String?, Never>(nil)
     
@@ -31,7 +43,6 @@ class ProfileInteractor: ProfileInteractorProtocol {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
             self?.loadingSubject.send(false)
-            self?.userProfileSubject.send(UserProfile.mockProfile)
         }
     }
     
@@ -46,7 +57,6 @@ class ProfileInteractor: ProfileInteractorProtocol {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
             self?.loadingSubject.send(false)
-            self?.userProfileSubject.send(UserProfile.mockProfile)
         }
     }
 } 
