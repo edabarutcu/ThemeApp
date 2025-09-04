@@ -40,6 +40,7 @@
 		DBABB1372E144815005547CF /* UserInfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBABB1362E144815005547CF /* UserInfoCard.swift */; };
 		DBABB1392E14487D005547CF /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBABB1382E14487D005547CF /* TabBarButton.swift */; };
 		DBABB13B2E1448CD005547CF /* ThemeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBABB13A2E1448CD005547CF /* ThemeCard.swift */; };
+		DBF7B5F32E69BCA800EA3D1A /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF7B5F22E69BCA800EA3D1A /* StoreKitManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		DBABB1362E144815005547CF /* UserInfoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCard.swift; sourceTree = "<group>"; };
 		DBABB1382E14487D005547CF /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
 		DBABB13A2E1448CD005547CF /* ThemeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCard.swift; sourceTree = "<group>"; };
+		DBF7B5F22E69BCA800EA3D1A /* StoreKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitManager.swift; sourceTree = "<group>"; };
 		FFCD1FA5FBA8789B9F501F07 /* Pods-ThemeApp-.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThemeApp-.release.xcconfig"; path = "Target Support Files/Pods-ThemeApp-/Pods-ThemeApp-.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,6 +167,7 @@
 		DB9F7CDE2E11782200AB6085 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DBF7B5F22E69BCA800EA3D1A /* StoreKitManager.swift */,
 				DB9F7CDC2E11782200AB6085 /* LocalizationHelper.swift */,
 				DB9F7CDD2E11782200AB6085 /* LocalizationKeys.swift */,
 			);
@@ -408,6 +411,7 @@
 				DB9F7D162E11782200AB6085 /* ThemeApp.swift in Sources */,
 				DB9F7D172E11782200AB6085 /* UserProfile.swift in Sources */,
 				DBABB13B2E1448CD005547CF /* ThemeCard.swift in Sources */,
+				DBF7B5F32E69BCA800EA3D1A /* StoreKitManager.swift in Sources */,
 				DB9F7D182E11782200AB6085 /* MarketRouter.swift in Sources */,
 				DB9F7D192E11782200AB6085 /* ThemeDetailInteractor.swift in Sources */,
 				DB9F7D1A2E11782200AB6085 /* Theme.swift in Sources */,

@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import StoreKit
 
 class ThemeDetailInteractor: ThemeDetailInteractorProtocol {
     private let purchaseResultSubject = PassthroughSubject<PurchaseResult, Never>()
@@ -29,14 +30,18 @@ class ThemeDetailInteractor: ThemeDetailInteractorProtocol {
         loadingSubject.send(true)
         errorSubject.send(nil)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [weak self] in
-            self?.loadingSubject.send(false)
-            
-            let isSuccess = Bool.random()
-            if isSuccess {
-                self?.purchaseResultSubject.send(.success)
-            } else {
-                self?.purchaseResultSubject.send(.failure("Satın alma işlemi başarısız oldu. Lütfen tekrar deneyin."))
+        Task { [weak self] in
+            guard let self = self else { return }
+            do {
+                let productId = self.productIdentifier(for: theme)
+                try await StoreKitManager.shared.purchase(productId: productId)
+                self.loadingSubject.send(false)
+                self.purchaseResultSubject.send(.success)
+            } catch {
+                self.loadingSubject.send(false)
+                let message = (error as? LocalizedError)?.errorDescription ?? "Satın alma işlemi başarısız oldu. Lütfen tekrar deneyin."
+                self.errorSubject.send(message)
+                self.purchaseResultSubject.send(.failure(message))
             }
         }
     }
@@ -59,3 +64,11 @@ class ThemeDetailInteractor: ThemeDetailInteractorProtocol {
         }
     }
 } 
+
+private extension ThemeDetailInteractor {
+    func productIdentifier(for theme: Theme) -> String {
+        // Mapping rule between theme id and App Store Connect product id
+        // For now, assume product ids are like: com.yourcompany.themeapp.theme.<themeId>
+        return "com.yourcompany.themeapp.theme.\(theme.id)"
+    }
+}
