@@ -46,6 +46,19 @@ struct ThemeDetailView: View {
         .sheet(isPresented: $showingWidgetManager) {
             WidgetManagerView(presenter: WidgetManagerPresenter(theme: presenter.theme))
         }
+        .overlay(alignment: .center) {
+            if presenter.isPurchasing {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle())
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color.black.opacity(0.2))
+            }
+        }
+        .alert("Hata", isPresented: .constant(presenter.errorMessage != nil), actions: {
+            Button("Tamam", role: .cancel) { presenter.errorMessage = nil }
+        }, message: {
+            Text(presenter.errorMessage ?? "Bilinmeyen hata")
+        })
     }
     
     private var headerSection: some View {
@@ -181,6 +194,21 @@ struct ThemeDetailView: View {
                 .background(presenter.theme.primaryColor)
                 .cornerRadius(12)
             }
+            .disabled(presenter.isPurchasing)
+            
+            Button(action: { presenter.restorePurchases() }) {
+                HStack {
+                    Image(systemName: "arrow.clockwise.circle")
+                    Text("Satın Alımları Geri Yükle")
+                }
+                .font(.subheadline)
+                .foregroundColor(presenter.theme.primaryColor)
+                .frame(maxWidth: .infinity)
+                .frame(height: 44)
+                .background(presenter.theme.primaryColor.opacity(0.08))
+                .cornerRadius(10)
+            }
+            .disabled(presenter.isPurchasing)
             
             Button(action: { presenter.previewTheme() }) {
                 HStack {

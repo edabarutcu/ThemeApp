@@ -61,10 +61,21 @@ class ThemeDetailPresenter: ObservableObject {
         interactor.applyTheme(theme)
     }
     
+    func restorePurchases() {
+        Task { [weak self] in
+            guard let self = self else { return }
+            do {
+                try await StoreKitManager.shared.restorePurchases()
+            } catch {
+                self.errorMessage = (error as? LocalizedError)?.errorDescription ?? "Satın alma geri yüklenemedi."
+            }
+        }
+    }
+    
     private func handlePurchaseResult(_ result: PurchaseResult) {
         switch result {
         case .success:
-            // Handle successful purchase
+            // handle successful purchase
             break
         case .failure(let error):
             errorMessage = error
